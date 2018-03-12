@@ -4,7 +4,7 @@
     "importedSpec": "./openapi.yaml",
     "name": "chatty",
     "repo": "dalmasjunior/chatty-api",
-    "splitSpec": true,
+    "splitSpec": false,
     "samples": true,
     "installSwaggerUI": true
   }
