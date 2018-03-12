@@ -1,0 +1,11 @@
+{
+  "generator-openapi-repo": {
+    "importExistingSpec": true,
+    "importedSpec": "./openapi.yaml",
+    "name": "chatty",
+    "repo": "dalmasjunior/chatty-api",
+    "splitSpec": true,
+    "samples": true,
+    "installSwaggerUI": true
+  }
+}
