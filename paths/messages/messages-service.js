@@ -60,7 +60,7 @@ class Messages {
 
     validate(params, res, cb) {
         if (tools.validateNotEmptyNotString(params.from) && tools.validateNotEmptyNotString(params.to) && tools.validateNotEmptyNotString(params.body)) {
-            if (params.body.length > 0 && params.body.length < 280) {
+            if (params.body.length < 280) {
                 this.validateReceiver(params.to, (receiver) => {
                     if(receiver) {
                         user.findById(params.from, (sender) => {
@@ -78,13 +78,13 @@ class Messages {
                 problems.maxBody(res);
             }            
         } else {
-            problems.invalidData();
+            problems.invalidData(res);
         }
     }
 
     validateReceiver(to, cb){
         user.findById(to, (receiver) => {
-            cb(receiver.id != "");
+            cb(receiver.id);
         });
     }
 }

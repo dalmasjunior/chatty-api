@@ -50,7 +50,8 @@ class Users {
     reduceBudget(id) {
         this.findById(id, (user) => {
             db.collection('users').doc(id).update({
-                budget:  user.budget - 1
+                budget:  user.budget - 1,
+                updatedAt: new Date().toISOString()
             });
         }); 
     }
@@ -59,12 +60,15 @@ class Users {
         var regex = /^[a-z][a-z_\.\-0-9]*/g;
         let m;
         m = regex.exec(user.username);
+        var result = false;
         if ((m !== null)){
             m.forEach((match, index) => {
                 var newUser = `${match}`;
-                 return newUser.length == user.username.length && tools.validateNotEmptyNotString(user.name) && tools.validateNotEmptyNotString(user.username);
+                 result = (newUser.length == user.username.length) && tools.validateNotEmptyNotString(user.name) && tools.validateNotEmptyNotString(user.username);
             });
         }
+
+        return result;
     }
 
     verifyDuplicated(username, cb) {
