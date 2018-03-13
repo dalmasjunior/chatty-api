@@ -1,0 +1,27 @@
+{
+  "name": "chatty-api",
+  "version": "1.0.0",
+  "description": "Exchange messages between users",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --delay 5 index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalmasjunior/chatty-api.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "firebase-admin": "^5.7.0",
+    "helmet": "^3.11.0",
+    "morgan": "^1.9.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalmasjunior/chatty-api/issues"
+  },
+  "homepage": "https://github.com/dalmasjunior/chatty-api#readme"
+}
