@@ -40,6 +40,7 @@ When created, the User will receive 10 budgets to send messages.
 Send a **GET** request passing the hash ID from an user to get all information about him.
 
 *Request*: localhost:9000/users/aUc3h1UAeqIP51Lymf9H
+
 *Response*: {
 					    "username": "string",
 					    "updatedAt": "Date ISO String",
@@ -63,6 +64,7 @@ Send a **POST** request with a json object to send a message to other user.
 Send a **GET** request passing the receiver *Hash Id* to get all messages the User has received.
 
 *Request*: localhost:9000/messages/o9hkIN517XRGmFE9Vnnv
+
 *Response*: {  "messages":  [  {  
 "id":  "string",  
 "from":  "string", 
@@ -77,6 +79,7 @@ Send a **GET** request passing the receiver *Hash Id* to get all messages the Us
 Send a **GET** request passing the hash ID from a message to get his informations.
 
 *Request*: localhost:9000/message/e6f5GZtPPxxIY7jVdXFh
+
 *Response*: {  
 "id":  "string",  
 "from":  "string",  
@@ -88,3 +91,16 @@ Send a **GET** request passing the hash ID from a message to get his information
 ## More
 To get more information about the *Status* response from the server, please, access the designed structure on [SwaggerHub - ChattyAPI](https://app.swaggerhub.com/apis/p47/Chatty/1.0.0)
 
+
+# Docker
+
+To run Chatty API in a container, please, follow this steps:
+    - Grant executable permission to *DockerRun* file:
+        ```sh
+              $ sudo chmod +x DockerRun
+        ```
+    - Run DockerRun file:
+        ```sh
+              $ ./DockerRun
+        ```
+*DockerRun* will build a new image from a server with **NodeJS** and execute the *docker run* command to start a new container.
