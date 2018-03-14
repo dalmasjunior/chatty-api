@@ -95,12 +95,14 @@ To get more information about the *Status* response from the server, please, acc
 # Docker
 
 To run Chatty API in a container, please, follow this steps:
-    - Grant executable permission to *DockerRun* file:
+
+ - Grant executable permission to *DockerRun* file:
     
         ```sh
               $ sudo chmod +x DockerRun
         ```
-    - Run DockerRun file:
+	
+ - Run DockerRun file:
     
         ```sh
               $ ./DockerRun
