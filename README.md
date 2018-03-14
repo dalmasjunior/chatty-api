@@ -96,11 +96,14 @@ To get more information about the *Status* response from the server, please, acc
 
 To run Chatty API in a container, please, follow this steps:
     - Grant executable permission to *DockerRun* file:
+    
         ```sh
               $ sudo chmod +x DockerRun
         ```
     - Run DockerRun file:
+    
         ```sh
               $ ./DockerRun
         ```
+	
 *DockerRun* will build a new image from a server with **NodeJS** and execute the *docker run* command to start a new container.
