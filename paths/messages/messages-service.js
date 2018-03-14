@@ -28,14 +28,16 @@ class Messages {
             this.validateReceiver(req.params.to, (receiver) => {
                 if(receiver) {
                     db.collection('messages').where('to', '==', req.params.to).get().then(messages => {
-                        var arrMessages = [];
-                        console.log("##########  " +messages.docs.length);
+                        var Messages = {
+                            messages: []
+                        };
+
                         for(var i = 0; i < messages.docs.length; i++) {
                             var message = messages.docs[i].data();
                             message.id = messages.docs[i].id;
-                            arrMessages.push(message);
+                            Messages.messages.push(message);
                         }
-                        res.status(200).json(arrMessages);
+                        res.status(200).json(Messages);
                     });
                 } else {
                     problems.recipientSender(res, 'GET', '/messages/:{to}');
